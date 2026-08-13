@@ -1,60 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link
-			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" media="screen and (max-width:768px)" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Carlos Isaac Sánchez Calva</title>
+    </head>
+    <body>
+        <header>
+            <h1>Carlos Isaac Sánchez Calva</h1>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#about">Sobre mi</a>
+                <a href="#cv">Currículum</a>
+                <a href="#contact">Contactame</a>
+            </nav>
+        </header>
 
-		<title>Portafolio - Carlos Isaac Sánchez Calva</title>
-	</head>
-	<body>
-		<header id="mainheader">
-			<div id="showcase">
-				<div class="container">
-					<h1 class="display-1">Hello!</h1>
-					<p class="large">I'm a Back-end and Front- end Developer</p>
-					<nav id="navbar">
-						<div class="container">
-							<ul>
-								<li>
-									<a
-										href="https://drive.google.com/file/d/1lmbTfz89S_ySA6zwn59IyBsaz3JUkhOS/view?usp=share_link"
-										>About me</a
-									>
-								</li>
-								<li><a href="#mainfooter">Contact</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
-		</header>
+        <main>
+            <section id="inicio">
+                <h2>Inicio</h2>
+                <p>Bienvenido a mi portafolio!</p>
+            </section>
+            <section id="about">
+                <img src="./assets/foto.webp" alt="" width="450" height="520" />
+                <h2>Sobre mi</h2>
+                <p>
+                    ¡Hola! Soy Carlos, desarrollador de software y alguien a
+                    quien le gusta entender cómo funcionan las cosas y convertir
+                    ideas en aplicaciones que realmente puedan ser utilizadas.
+                </p>
+                <p>
+                    Mi camino en el desarrollo web me ha llevado a trabajar
+                    tanto en frontend como en backend, pasando por tecnologías
+                    como JavaScript, TypeScript, C#, .NET, React y Blazor.
+                    También he tenido la oportunidad de trabajar con bases de
+                    datos y participar en proyectos donde no solo se trata de
+                    escribir código, sino de encontrar la mejor forma de
+                    resolver un problema.
+                </p>
+                <p>
+                    Disfruto aprender cosas nuevas, enfrentarme a problemas que
+                    al principio parecen complicados y, sobre todo, ver cómo una
+                    idea va tomando forma hasta convertirse en algo funcional.
+                </p>
+                <p>
+                    Actualmente sigo construyendo mi experiencia como
+                    desarrollador y buscando nuevos retos que me permitan seguir
+                    aprendiendo, mejorar mis habilidades y crear mejores
+                    soluciones.
+                </p>
+            </section>
+            <section id="cv">
+                <h2>Currículum</h2>
+                <p>Puedes descargar mi currículum en cualquier momento.</p>
+                <a
+                    href="https://drive.google.com/file/d/1my90UNEEVZezcETaDuPZXte8qfspJ3LB/view?usp=sharing"
+                    >Aquí</a
+                >
+            </section>
+            <section id="contact">
+                <h2>Contacto</h2>
+                <h1>Comenzemos una conversación.</h1>
+                <p>
+                    ¿Tienes un proyecto en mente o una oportunidad para mí?
+                    ¡Contáctame!
+                </p>
 
-		<footer id="mainfooter">
-			<a
-				href="http://www.linkedin.com/in/carlos-isaac-s%C3%A1nchez-calva-b1a640257"
-				>LinkedIn
-				<i class="bx bxl-linkedin-square"></i>
-			</a>
-			<a href="https://github.com/CarlitosOMG">
-				GitHub
-				<i class="bx bxl-github"></i>
-			</a>
-			<br />
-			<p id="texto" style="font-weight: bold">
-				carlosisaacsanchezcalva@gmail.com
-				<i style="color: red" class="bx bxl-gmail"></i>
-			</p>
-			<button class="copy-btn" onclick="copiarTexto()">
-				<i class="bx bx-copy"></i>
-			</button>
-		</footer>
-		<script src="app.js"></script>
-	</body>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10"
+                    />
+                    <path d="M3 7l9 6l9 -6" />
+                </svg>
+                <p>carlosisaacsanchezcalva@gmail.com</p>
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-location"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
+                    />
+                </svg>
+                <p>Hidalgo, México</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                &copy; 2026 Carlos Isaac Sánchez Calva. Todos los derechos
+                reservados.
+            </p>
+            <a
+                href="https://www.linkedin.com/in/carlos-isaac-s%C3%A1nchez-calva-b1a640257/"
+                >LinkedIn</a
+            >
+            <a href="https://github.com/CarlitosOMG/">GitHub</a>
+        </footer>
+    </body>
 </html>
