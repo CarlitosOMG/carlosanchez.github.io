@@ -12,212 +12,322 @@ body {
 }
 
 body {
-    font-family: system-ui;
-    background-color: #ffffff;
-    color: #333333;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        'Open Sans',
+        'Helvetica Neue',
+        sans-serif;
     min-height: 100vh;
+    background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+    color: aliceblue;
     display: flex;
     flex-direction: column;
     line-height: 1.6;
 }
 
-h2 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    text-wrap: balance;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-h2 + p {
-    text-wrap: balance;
-    margin-bottom: 2rem;
-}
-
-h1 + p {
-    text-wrap: balance;
-    margin-bottom: 2rem;
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(151, 194, 192, 0.5);
 }
 
 header {
     position: sticky;
     top: 0;
-    z-index: 1000;
-
-    border-bottom: 1px solid;
-    background: #f9fcfd;
-    padding: 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-
-    h1 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #333333;
-    }
+    z-index: 10;
 }
 
 nav {
-    align-items: center;
-    gap: 1rem;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0);
+    animation: navScroll linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 200px;
+
+    h1 {
+        margin-right: auto;
+        font-size: 2rem;
+        color: aliceblue;
+    }
 
     a {
+        color: aliceblue;
         text-decoration: none;
-        color: #6151f7;
-        transition: color 0.2s;
-        font-weight: 500;
-
-        &:hover,
-        &:focus {
-            color: #2c1b46;
-            outline: none;
-        }
+        padding: 0.5rem 1rem;
     }
 }
 
-main > section:nth-child(1) {
-    background: #f9fcfd;
-    height: 500px;
-    text-align: center;
+@keyframes navScroll {
+    to {
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+    }
+}
+
+.language {
+    list-style: none;
+    padding: 0.5rem;
+}
+
+.language > li {
+    position: relative;
+}
+
+.language > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    list-style: none;
+    animation: navScroll linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 200px;
+}
+
+.language > li:hover > ul {
+    display: block;
+}
+
+#inicio {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-main > section:nth-child(2) {
-    min-height: 700px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding: 62px;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-
-        mask-image: linear-gradient(
-            to left,
-            rgb(3, 196, 255) 60%,
-            rgba(0, 155, 202, 0) 90%
-        );
-    }
-}
-
-@media (max-width: 768px) {
-    /* Header */
-    header {
-        padding: 0.5rem;
-    }
-
-    header h1 {
-        font-size: 1rem;
-    }
-
-    nav {
-        gap: 0.5rem;
-    }
-
-    nav a {
-        font-size: 0.85rem;
-    }
-
-    /* Segunda sección */
-    main > section:nth-child(2) {
-        grid-template-columns: 1fr;
-        padding: 32px 20px;
-        min-height: auto;
-    }
-}
-
-main > section:nth-child(3) {
-    background: #f9fcfd;
-    height: 400px;
+    align-content: center;
+    height: 100vh;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    a {
-        text-decoration: none;
-        color: #6151f7;
-        transition: color 0.2s;
-
-        &:hover,
-        &:focus {
-            color: #2c1b46;
-            outline: none;
-        }
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
     }
 }
 
-main > section:nth-child(4) {
-    height: 500px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Stars animation */
+.stars {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    background: white;
+    box-shadow:
+        2vw 5vh 2px white,
+        10vw 8vh 2px white,
+        15vw 15vh 1px white,
+        22vw 22vh 1px white,
+        28vw 12vh 2px white,
+        32vw 32vh 1px white,
+        38vw 18vh 2px white,
+        42vw 35vh 1px white,
+        48vw 25vh 2px white,
+        53vw 42vh 1px white,
+        58vw 15vh 2px white,
+        63vw 38vh 1px white,
+        68vw 28vh 2px white,
+        73vw 45vh 1px white,
+        78vw 32vh 2px white,
+        83vw 48vh 1px white,
+        88vw 20vh 2px white,
+        93vw 52vh 1px white,
+        98vw 35vh 2px white,
+        5vw 60vh 1px white,
+        12vw 65vh 2px white,
+        18vw 72vh 1px white,
+        25vw 78vh 2px white,
+        30vw 85vh 1px white,
+        35vw 68vh 2px white,
+        40vw 82vh 1px white,
+        45vw 92vh 2px white,
+        50vw 75vh 1px white,
+        55vw 88vh 2px white,
+        60vw 95vh 1px white,
+        65vw 72vh 2px white,
+        70vw 85vh 1px white,
+        75vw 78vh 2px white,
+        80vw 92vh 1px white,
+        85vw 82vh 2px white,
+        90vw 88vh 1px white,
+        95vw 75vh 2px white;
+    animation: twinkle 8s infinite linear;
+}
 
-    svg {
-        color: #6151f7;
-        width: 64px;
-        height: 64px;
-        padding: 16px;
+.shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shoot 3s infinite ease-in;
+}
+
+.shooting-star:nth-child(1) {
+    top: 20%;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+    top: 35%;
+    left: -100px;
+    animation-delay: 1s;
+}
+
+.shooting-star:nth-child(3) {
+    top: 50%;
+    left: -100px;
+    animation-delay: 2s;
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
     }
 }
-.features {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    align-items: center;
-}
 
-.features svg:nth-of-type(2) {
-    margin-left: 40px;
-}
-
-@media (max-width: 768px) {
-    .features {
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: center;
-        align-items: center;
-        column-gap: 4px;
-        row-gap: 20px;
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(25deg);
+        opacity: 1;
     }
-
-    .features p {
-        margin: 0;
-        padding: 0;
+    100% {
+        transform: translateX(120vw) translateY(50vh) rotate(25deg);
+        opacity: 0;
     }
 }
 
-footer {
-    background-color: #f9fcfd;
-    border-top: 1px solid;
-    text-align: center;
-    padding: 16px;
+/* Additional twinkling stars with different animation timing */
+.stars {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    background: white;
+    box-shadow:
+        2vw 5vh 2px white,
+        10vw 8vh 2px white,
+        15vw 15vh 1px white,
+        22vw 22vh 1px white,
+        28vw 12vh 2px white,
+        32vw 32vh 1px white,
+        38vw 18vh 2px white,
+        42vw 35vh 1px white,
+        48vw 25vh 2px white,
+        53vw 42vh 1px white,
+        58vw 15vh 2px white,
+        63vw 38vh 1px white,
+        68vw 28vh 2px white,
+        73vw 45vh 1px white,
+        78vw 32vh 2px white,
+        83vw 48vh 1px white,
+        88vw 20vh 2px white,
+        93vw 52vh 1px white,
+        98vw 35vh 2px white,
+        5vw 60vh 1px white,
+        12vw 65vh 2px white,
+        18vw 72vh 1px white,
+        25vw 78vh 2px white,
+        30vw 85vh 1px white,
+        35vw 68vh 2px white,
+        40vw 82vh 1px white,
+        45vw 92vh 2px white,
+        50vw 75vh 1px white,
+        55vw 88vh 2px white,
+        60vw 95vh 1px white,
+        65vw 72vh 2px white,
+        70vw 85vh 1px white,
+        75vw 78vh 2px white,
+        80vw 92vh 1px white,
+        85vw 82vh 2px white,
+        90vw 88vh 1px white,
+        95vw 75vh 2px white;
+    animation: twinkle 8s infinite linear;
+}
 
-    p {
-        font-size: 0.875rem;
-        color: #333333;
-    }
-    a {
-        text-decoration: none;
-        color: #6151f7;
-        transition: color 0.2s;
+.shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shoot 3s infinite ease-in;
+}
 
-        &:hover,
-        &:focus {
-            color: #2c1b46;
-            outline: none;
-        }
+.shooting-star:nth-child(1) {
+    top: 20%;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+    top: 35%;
+    left: -100px;
+    animation-delay: 1s;
+}
+
+.shooting-star:nth-child(3) {
+    top: 50%;
+    left: -100px;
+    animation-delay: 2s;
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.8;
     }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(25deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(120vw) translateY(50vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* Additional twinkling stars with different animation timing */
+.stars::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow:
+        8vw 12vh 2px white,
+        16vw 18vh 1px white,
+        24vw 25vh 2px white,
+        33vw 15vh 1px white,
+        41vw 28vh 2px white,
+        49vw 35vh 1px white,
+        57vw 22vh 2px white,
+        65vw 42vh 1px white,
+        73vw 28vh 2px white,
+        81vw 48vh 1px white,
+        89vw 32vh 2px white,
+        97vw 45vh 1px white,
+        3vw 68vh 2px white,
+        11vw 75vh 1px white,
+        19vw 82vh 2px white,
+        27vw 88vh 1px white,
+        35vw 72vh 2px white,
+        43vw 85vh 1px white,
+        51vw 92vh 2px white,
+        59vw 78vh 1px white;
+    animation: twinkle 6s infinite linear reverse;
 }
