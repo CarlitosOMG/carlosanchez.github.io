@@ -1,26 +1,30 @@
 <!doctype html>
-<html lang="en">
+
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <link rel="stylesheet" href="./css/style.css" />
+
         <title>CS.js</title>
+
+        <link rel="icon" type="image/x-icon" href="./assets/icon.ico" />
     </head>
+
     <body>
         <header>
             <nav>
                 <h1>CS.js</h1>
-                <ul class="language">
-                    <li>
-                        <span>ES ▾</span>
 
-                        <ul>
-                            <li><a href="#">ES</a></li>
-                            <li><a href="#">EN</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <a class="cv-contact" href="#cv">Currículum y contacto</a>
+                <select name="language" id="language" class="language">
+                    <option value="es" selected>ES</option>
+                    <option value="en">EN</option>
+                </select>
+
+                <a class="cv-contact" href="#cv" data-i18n="nav.cvContact">
+                    Currículum y contacto
+                </a>
             </nav>
         </header>
 
@@ -43,6 +47,7 @@
                     <path d="M7 17l5 -5l5 5" />
                 </svg>
             </a>
+
             <section id="inicio">
                 <article>
                     <img
@@ -51,23 +56,28 @@
                         width="450"
                         height="520"
                     />
-                    <h1>Carlos Sánchez</h1>
+
+                    <h1 data-i18n="home.name">Carlos Sánchez</h1>
                 </article>
             </section>
+
             <div class="about-container">
                 <section id="who">
-                    <h1>¿Quién es Carlos?</h1>
+                    <h1 data-i18n="who.title">¿Quién es Carlos?</h1>
                 </section>
+
                 <section id="about">
                     <article>
-                        <h1>¡Hola!</h1>
-                        <p>
+                        <h1 data-i18n="about.title">¡Hola!</h1>
+
+                        <p data-i18n="about.paragraph1">
                             Soy Carlos, desarrollador de software y alguien a
                             quien le gusta entender cómo funcionan las cosas y
                             convertir ideas en aplicaciones que realmente puedan
                             ser utilizadas.
                         </p>
-                        <p>
+
+                        <p data-i18n="about.paragraph2">
                             Mi camino en el desarrollo web me ha llevado a
                             trabajar tanto en frontend como en backend, pasando
                             por tecnologías como JavaScript, TypeScript, C#,
@@ -77,13 +87,15 @@
                             escribir código, sino de encontrar la mejor forma de
                             resolver un problema.
                         </p>
-                        <p>
+
+                        <p data-i18n="about.paragraph3">
                             Disfruto aprender cosas nuevas, enfrentarme a
                             problemas que al principio parecen complicados y,
                             sobre todo, ver cómo una idea va tomando forma hasta
                             convertirse en algo funcional.
                         </p>
-                        <p>
+
+                        <p data-i18n="about.paragraph4">
                             Actualmente sigo construyendo mi experiencia como
                             desarrollador y buscando nuevos retos que me
                             permitan seguir aprendiendo, mejorar mis habilidades
@@ -92,20 +104,32 @@
                     </article>
                 </section>
             </div>
+
             <section id="cv">
-                <h1>Currículum</h1>
-                <p>Puedes descargar mi currículum en cualquier momento.</p>
+                <h1 data-i18n="cv.title">Currículum</h1>
+
+                <p data-i18n="cv.description">
+                    Puedes descargar mi currículum en cualquier momento.
+                </p>
+
                 <a
                     href="https://drive.google.com/file/d/1my90UNEEVZezcETaDuPZXte8qfspJ3LB/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Aqui</a
+                    data-i18n="cv.link"
                 >
+                    Aquí
+                </a>
             </section>
+
             <section id="contact">
-                <h1>Contacto</h1>
-                <h2>Comenzemos una conversación.</h2>
-                <p>
+                <h1 data-i18n="contact.title">Contacto</h1>
+
+                <h2 data-i18n="contact.subtitle">
+                    Comencemos una conversación.
+                </h2>
+
+                <p data-i18n="contact.description">
                     ¿Tienes un proyecto en mente o una oportunidad para mí?
                     ¡Contáctame!
                 </p>
@@ -129,6 +153,7 @@
                         />
                         <path d="M3 7l9 6l9 -6" />
                     </svg>
+
                     <p>carlosisaacsanchezcalva@gmail.com</p>
 
                     <svg
@@ -148,16 +173,18 @@
                             d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
                         />
                     </svg>
-                    <p>Hidalgo, México</p>
+
+                    <p data-i18n="location.country">Hidalgo, México</p>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>
+            <p data-i18n="footer.copyright">
                 &copy; 2026 Carlos Isaac Sánchez Calva. Todos los derechos
                 reservados.
             </p>
+
             <a
                 href="https://www.linkedin.com/in/carlos-isaac-s%C3%A1nchez-calva-b1a640257/"
                 target="_blank"
@@ -165,6 +192,7 @@
             >
                 LinkedIn
             </a>
+
             <a
                 href="https://github.com/CarlitosOMG/"
                 target="_blank"
@@ -173,13 +201,17 @@
                 GitHub
             </a>
         </footer>
+
         <div class="star-background">
             <div class="stars"></div>
+
             <div class="shooting-star"></div>
             <div class="shooting-star"></div>
             <div class="shooting-star"></div>
             <div class="shooting-star"></div>
             <div class="shooting-star"></div>
         </div>
+
+        <script src="./js/i18n.js"></script>
     </body>
 </html>

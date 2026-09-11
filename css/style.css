@@ -51,6 +51,7 @@ header {
     z-index: 10;
 }
 
+/*back to start link design*/
 .back-to-start-link {
     position: fixed;
     bottom: 1rem;
@@ -74,6 +75,7 @@ header {
     color: #f1f5f9;
 }
 
+/*nav design*/
 nav {
     display: flex;
     justify-content: flex-end;
@@ -99,48 +101,32 @@ nav {
     }
 }
 
-/*animation for nav scroll*/
-@keyframes navScroll {
-    to {
-        background-color: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(10px);
-    }
-}
-
-/*list language design configuration*/
+/*select language design configuration*/
 .language {
-    list-style: none;
     padding: 0.5rem;
     color: #94a3b8;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.829);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 5px;
 }
 
-.language > li {
-    position: relative;
+.language option {
+    background-color: rgb(0, 0, 0);
+    color: #94a3b8;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
 }
 
-.language > li > ul {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    list-style: none;
-    animation: navScroll linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0 200px;
-
-    transform: scaleY(0);
-    transform-origin: top;
-
-    opacity: 0;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.2s ease;
+.language:hover {
+    color: #a78bfa;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.829);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-.language > li:hover > ul {
-    transform: scaleY(1);
-    opacity: 1;
+.language:hover option {
+    background-color: rgb(0, 0, 0);
+    color: #a78bfa;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.829);
 }
 
 /*section design configuration*/
@@ -153,12 +139,14 @@ section {
     text-align: center;
 }
 
+/*section design for cv and contact sections*/
 #cv,
 #contact {
     align-items: center;
     height: 50vh;
 }
 
+/*svg design*/
 .features {
     display: flex;
     flex-wrap: wrap;
@@ -174,7 +162,7 @@ section {
     }
 }
 
-/*title n links design configuration*/
+/*titles and links design configuration*/
 #inicio h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -247,7 +235,7 @@ a:hover {
     padding: 0 1rem;
 }
 
-/* Al pasar sobre el título */
+/* when hovering over the title */
 .about-container:has(#who h1:hover) #who {
     opacity: 0;
     pointer-events: none;
@@ -258,7 +246,7 @@ a:hover {
     pointer-events: auto;
 }
 
-/* Mientras el mouse esté dentro del article */
+/* while the mouse is over the article */
 .about-container:has(#about article:hover) #who {
     opacity: 0;
     pointer-events: none;
@@ -295,13 +283,18 @@ footer {
     }
 }
 
+/*animation for nav scroll*/
+@keyframes navScroll {
+    to {
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Responsive design for smaller screens */
 @media (max-width: 568px) {
     header h1 {
         font-size: 1rem;
-    }
-
-    nav {
-        gap: 0.5rem;
     }
 
     nav a {
@@ -309,16 +302,34 @@ footer {
     }
 
     img {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
         border-radius: 50%;
         box-shadow: 0 4px 8px rgba(151, 194, 192, 0.5);
     }
 
     /* Segunda sección */
     section {
+        scale: 0.9;
+        display: grid;
         grid-template-columns: 1fr;
         padding: 32px 20px;
+    }
+
+    .about-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 32px 20px;
+    }
+
+    .about-container section {
+        scale: 0.9;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 32px 20px;
+    }
+    .about-container #who h1 {
+        scale: 0.9;
     }
 }
 
