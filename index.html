@@ -1,27 +1,54 @@
 <!doctype html>
-<html lang="en">
+
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <link rel="stylesheet" href="./css/style.css" />
-        <title>Carlos Isaac Sánchez Calva</title>
+
+        <title>CS.js</title>
+
+        <link rel="icon" type="image/x-icon" href="./assets/icon.ico" />
     </head>
+
     <body>
         <header>
-            <h1>Carlos Isaac Sánchez Calva</h1>
             <nav>
-                <a href="#inicio">Inicio</a>
-                <a href="#about">Sobre mi</a>
-                <a href="#cv">Currículum y contacto</a>
+                <h1>CS.js</h1>
+
+                <select name="language" id="language" class="language">
+                    <option value="es" selected>ES</option>
+                    <option value="en">EN</option>
+                </select>
+
+                <a class="cv-contact" href="#cv" data-i18n="nav.cvContact">
+                    Currículum y contacto
+                </a>
             </nav>
         </header>
 
         <main>
+            <a class="back-to-start-link" href="#inicio">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-up"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M7 11l5 -5l5 5" />
+                    <path d="M7 17l5 -5l5 5" />
+                </svg>
+            </a>
+
             <section id="inicio">
-                <h1>Inicio</h1>
-                <p>Bienvenido a mi portafolio!</p>
-            </section>
-            <section id="about">
                 <article>
                     <img
                         src="./assets/foto.webp"
@@ -29,52 +56,80 @@
                         width="450"
                         height="520"
                     />
-                </article>
-                <article>
-                    <h1>Sobre mi</h1>
-                    <p>
-                        ¡Hola! Soy Carlos, desarrollador de software y alguien a
-                        quien le gusta entender cómo funcionan las cosas y
-                        convertir ideas en aplicaciones que realmente puedan ser
-                        utilizadas.
-                    </p>
-                    <p>
-                        Mi camino en el desarrollo web me ha llevado a trabajar
-                        tanto en frontend como en backend, pasando por
-                        tecnologías como JavaScript, TypeScript, C#, .NET, React
-                        y Blazor. También he tenido la oportunidad de trabajar
-                        con bases de datos y participar en proyectos donde no
-                        solo se trata de escribir código, sino de encontrar la
-                        mejor forma de resolver un problema.
-                    </p>
-                    <p>
-                        Disfruto aprender cosas nuevas, enfrentarme a problemas
-                        que al principio parecen complicados y, sobre todo, ver
-                        cómo una idea va tomando forma hasta convertirse en algo
-                        funcional.
-                    </p>
-                    <p>
-                        Actualmente sigo construyendo mi experiencia como
-                        desarrollador y buscando nuevos retos que me permitan
-                        seguir aprendiendo, mejorar mis habilidades y crear
-                        mejores soluciones.
-                    </p>
+
+                    <h1 data-i18n="home.name">Carlos Sánchez</h1>
                 </article>
             </section>
+
+            <div class="about-container">
+                <section id="who">
+                    <h1 data-i18n="who.title">¿Quién es Carlos?</h1>
+                </section>
+
+                <section id="about">
+                    <article>
+                        <h1 data-i18n="about.title">¡Hola!</h1>
+
+                        <p data-i18n="about.paragraph1">
+                            Soy Carlos, desarrollador de software y alguien a
+                            quien le gusta entender cómo funcionan las cosas y
+                            convertir ideas en aplicaciones que realmente puedan
+                            ser utilizadas.
+                        </p>
+
+                        <p data-i18n="about.paragraph2">
+                            Mi camino en el desarrollo web me ha llevado a
+                            trabajar tanto en frontend como en backend, pasando
+                            por tecnologías como JavaScript, TypeScript, C#,
+                            .NET, React y Blazor. También he tenido la
+                            oportunidad de trabajar con bases de datos y
+                            participar en proyectos donde no solo se trata de
+                            escribir código, sino de encontrar la mejor forma de
+                            resolver un problema.
+                        </p>
+
+                        <p data-i18n="about.paragraph3">
+                            Disfruto aprender cosas nuevas, enfrentarme a
+                            problemas que al principio parecen complicados y,
+                            sobre todo, ver cómo una idea va tomando forma hasta
+                            convertirse en algo funcional.
+                        </p>
+
+                        <p data-i18n="about.paragraph4">
+                            Actualmente sigo construyendo mi experiencia como
+                            desarrollador y buscando nuevos retos que me
+                            permitan seguir aprendiendo, mejorar mis habilidades
+                            y crear mejores soluciones.
+                        </p>
+                    </article>
+                </section>
+            </div>
+
             <section id="cv">
-                <h1>Currículum</h1>
-                <p>Puedes descargar mi currículum en cualquier momento.</p>
+                <h1 data-i18n="cv.title">Currículum</h1>
+
+                <p data-i18n="cv.description">
+                    Puedes descargar mi currículum en cualquier momento.
+                </p>
+
                 <a
                     href="https://drive.google.com/file/d/1my90UNEEVZezcETaDuPZXte8qfspJ3LB/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Aqui</a
+                    data-i18n="cv.link"
                 >
+                    Aquí
+                </a>
             </section>
-            <section>
-                <h1>Contacto</h1>
-                <h2>Comenzemos una conversación.</h2>
-                <p>
+
+            <section id="contact">
+                <h1 data-i18n="contact.title">Contacto</h1>
+
+                <h2 data-i18n="contact.subtitle">
+                    Comencemos una conversación.
+                </h2>
+
+                <p data-i18n="contact.description">
                     ¿Tienes un proyecto en mente o una oportunidad para mí?
                     ¡Contáctame!
                 </p>
@@ -98,6 +153,7 @@
                         />
                         <path d="M3 7l9 6l9 -6" />
                     </svg>
+
                     <p>carlosisaacsanchezcalva@gmail.com</p>
 
                     <svg
@@ -117,16 +173,18 @@
                             d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
                         />
                     </svg>
-                    <p>Hidalgo, México</p>
+
+                    <p data-i18n="location.country">Hidalgo, México</p>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>
+            <p data-i18n="footer.copyright">
                 &copy; 2026 Carlos Isaac Sánchez Calva. Todos los derechos
                 reservados.
             </p>
+
             <a
                 href="https://www.linkedin.com/in/carlos-isaac-s%C3%A1nchez-calva-b1a640257/"
                 target="_blank"
@@ -134,6 +192,7 @@
             >
                 LinkedIn
             </a>
+
             <a
                 href="https://github.com/CarlitosOMG/"
                 target="_blank"
@@ -142,5 +201,17 @@
                 GitHub
             </a>
         </footer>
+
+        <div class="star-background">
+            <div class="stars"></div>
+
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+        </div>
+
+        <script src="./js/i18n.js"></script>
     </body>
 </html>
