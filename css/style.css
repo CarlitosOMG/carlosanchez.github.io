@@ -6,6 +6,7 @@
 
 html {
     overflow-x: clip;
+    scroll-behavior: smooth;
 }
 
 html,
@@ -30,6 +31,7 @@ body {
         sans-serif;
     min-height: 100vh;
     background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+    background-attachment: fixed;
     color: #f1f5f9;
     display: flex;
     flex-direction: column;
@@ -47,6 +49,29 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
+}
+
+.back-to-start-link {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #8b5cf6;
+    color: #f1f5f9;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(151, 194, 192, 0.5);
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+    z-index: 1;
+}
+
+.back-to-start-link:hover {
+    transform: translateY(-3px);
+    background-color: #a78bfa;
+    color: #f1f5f9;
 }
 
 nav {
@@ -130,12 +155,8 @@ section {
 
 #cv,
 #contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     height: 50vh;
-    text-align: center;
 }
 
 .features {
@@ -181,11 +202,6 @@ section {
     max-width: 600px;
     margin: 0 auto;
     padding: 0 1rem;
-}
-
-#cv a {
-    animation: pulse 2s infinite;
-    animation-delay: 6s;
 }
 
 a {
@@ -279,7 +295,63 @@ footer {
     }
 }
 
+@media (max-width: 568px) {
+    header h1 {
+        font-size: 1rem;
+    }
+
+    nav {
+        gap: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(151, 194, 192, 0.5);
+    }
+
+    /* Segunda sección */
+    section {
+        grid-template-columns: 1fr;
+        padding: 32px 20px;
+    }
+}
+
+@media (max-width: 568px) {
+    .features,
+    .back-to-start-link {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        column-gap: 4px;
+        row-gap: 20px;
+    }
+
+    .features p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
 /* Stars animation */
+.star-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: -1;
+}
+
 .stars {
     width: 1px;
     height: 1px;
